@@ -1,0 +1,70 @@
+{
+  "sensor": "https://example.edu/sensors/1",
+  "sendTime": "2018-02-09T20:20:07.558Z",
+  "dataVersion": "http://purl.imsglobal.org/ctx/caliper/v1p1",
+  "data": [
+    {
+      "@context": "http://purl.imsglobal.org/ctx/caliper/v1p1",
+      "id": "urn:uuid:c982635a-cae4-420e-a6f5-7cd1c0d8de39",
+      "type": "MediaEvent",
+      "actor": "https://mcommunity.umich.edu/#profile:user004",
+      "action": "Ended",
+      "object": {
+        "id": "https://leccap.engin.umich.edu/leccap/viewer/r/woNYn8",
+        "type": "VideoObject",
+        "name": "molecules study",
+        "dateCreated": "2017-09-27T14:08:00.000Z",
+        "dateModified": "2017-10-02T14:48:30.000Z",
+        "duration": "PT8687.000S",
+        "isPartOf": {
+          "id": "https://leccap.engin.umich.edu/leccap/site/iosb1eezb220x49khge",
+          "type": "WebPage",
+          "name": "BIOLOGY 172",
+          "dateCreated": "2017-09-01T21:47:18.000Z"
+        }
+      },
+      "target": {
+        "id": "https://leccap.engin.umich.edu/leccap/viewer/r/woNYn8#type=MediaLocation",
+        "type": "MediaLocation",
+        "currentTime": "PT7432.063S",
+        "isPartOf": "https://leccap.engin.umich.edu/leccap/viewer/r/woNYn8"
+      },
+      "eventTime": "2018-02-09T20:20:04.558Z",
+      "edApp": "https://leccap.engin.umich.edu/leccap/",
+      "session": {
+        "id": "urn:umich:engin:leccap:session:37DC6Dcb704F626FF0B",
+        "type": "Session",
+        "user": "https://mcommunity.umich.edu/#profile:user004",
+        "startedAtTime": "2017-10-02T13:45:13.000Z"
+      },
+      "group": {
+        "id": "https://leccap.engin.umich.edu/leccap/site/iosb1eezb220x49khge#CourseOffering",
+        "type": "CourseOffering",
+        "courseNumber": "BIOLOGY 172",
+        "academicSession": "FA 2017"
+      },
+      "membership": {
+        "id": "https://leccap.engin.umich.edu/leccap/site/iosb1eezb220x49khge#Membership&member=user004",
+        "type": "Membership",
+        "member": "https://mcommunity.umich.edu/#profile:user004",
+        "organization": "https://leccap.engin.umich.edu/leccap/site/iosb1eezb220x49khge#CourseOffering",
+        "roles": [
+          "Learner"
+        ],
+        "status": "Active"
+      },
+      "federatedSession": {
+        "id": "urn:instructure:canvas:umich:session:e1cef394FEeE0280DE44EFE2caae7D1C0b5060",
+        "type": "LtiSession",
+        "user": "https://mcommunity.umich.edu/#profile:user004",
+        "messageParameters": {
+          "custom_canvas_course_id": 182678,
+          "custom_canvas_user_id": "user004_cid",
+          "lis_course_offering_sourcedid": 216004646201001,
+          "lis_person_sourcedid": "user004_sisid",
+          "resource_link_id": "9a17100e4c806512a4a34b20d61dd8786d2c9826"
+        }
+      }
+    }
+  ]
+}

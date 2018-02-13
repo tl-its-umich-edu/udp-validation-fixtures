@@ -1,0 +1,6 @@
+{
+  "sensor": "https://example.edu/sensors/1",
+  "sendTime": "2018-02-09T17:32:03.867Z",
+  "dataVersion": "http://purl.imsglobal.org/ctx/caliper/v1p1",
+  "data": [ ]
+}

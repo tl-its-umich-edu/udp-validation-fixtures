@@ -23,9 +23,9 @@ if(gold-tier LC):
     1. This case is sending a caliper event with envelope with out a payload, with wrong OAuth token, pass the test return {HTTP code: Response} => {400 : bearer token missing or not recognized}
 4. Fixture `event_with_only_envelope_no_payload.json`, Test case: E-07
     1. This case is sending a caliper event with envelope with out a payload, with missing OAuth token header, pass the test return {HTTP code: Response} => {400 : bearer token missing or not recognized}
-5. Fixture `E_returning_routed_to_gold_tire_pub_sub_topic.json` , Test case: E-17
+5. Fixture `gte_routed_to_pub_sub_topic.json` , Test case: E-17
     1. Event sent successfully with proper routing information. {HTTP code: Response} => {200 : {"urn:uuid:c982635a-cae4-420e-a6f5-7cd1c0d8de39": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "340963522}
-6. Fixture `E_returning_routed_to_gold_tire_pub_sub_topic.json` , Test case: E-19
+6. Fixture `gte_routed_to_pub_sub_topic.json` , Test case: E-19
        1. Event sent successfully with proper routing information and found in the raw bucket. {HTTP code: Response} => {200 : {"urn:uuid:c982635a-cae4-420e-a6f5-7cd1c0d8de39": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "340963522}
            this use case events are not written to BigQuery. But this call set the stage for next step for event processing. 
            

@@ -25,9 +25,17 @@ if(gold-tier LC):
     1. This case is sending a caliper event with envelope with out a payload, with missing OAuth token header, pass the test return {HTTP code: Response} => {400 : bearer token missing or not recognized}
 5. Fixture `gte_routed_to_pub_sub_topic.json` , Test case: E-17
     1. Event sent successfully with proper routing information. {HTTP code: Response} => {200 : {"urn:uuid:c982635a-cae4-420e-a6f5-7cd1c0d8de39": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "340963522}
-6. Fixture `gte_routed_to_pub_sub_topic.json` , Test case: E-19
+6. Fixture `gte_routed_to_pub_sub_topic.json` , Test case: E-16, this test case is same as E-17 the only difference is the E-16 checks for the presence of a response. E-17 and E-18 confirm that the response is correct
+7. Fixture `gte_routed_to_pub_sub_topic.json` , Test case: E-19
        1. Event sent successfully with proper routing information and found in the raw bucket. {HTTP code: Response} => {200 : {"urn:uuid:c982635a-cae4-420e-a6f5-7cd1c0d8de39": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "340963522}
            this use case events are not written to BigQuery. But this call set the stage for next step for event processing. 
+8. Fixture `multiple_events_in_one.json`, Test case: E-15, Multiple events wrapped in one envelope and in BigQuery these events appeared as seperate table entry
+    1. {HTTP code: Response} => {200: {"urn:uuid:1bc6ab92-fc6c-42f0-b47c-57a6580952f5": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "36761342368097"}, 
+                                       "urn:uuid:9a5595aa-0803-49c6-b251-7d90994030c2": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "36761783696015"}, 
+                                       "urn:uuid:220ec031-4500-4f73-96e4-c1bc4df30d83": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "36763424717427"}, 
+                                       "urn:uuid:94e3b5e0-98c8-4057-855b-91f9a26697c8": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "36762709009312"}, 
+                                       "urn:uuid:386c77b6-17cf-49b0-a6cf-61269261ac4f": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "36761196357185"}}}
+           
            
 
             

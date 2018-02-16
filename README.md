@@ -40,5 +40,28 @@ if(gold-tier LC):
     2. {"urn:uuid:52e61d74-bd42-46d3-9610-487ab04c8102": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "37314317365443"}}
            
 
+
+#### Postman tips
+1. In order to reuse the fixtures in this repo UUID and the eventTime/SendTime time needs to be changed while sending to endpoint. Postman could of great help for it. All you have to do is simple steps
+    1. Set the [Enviroment](https://www.getpostman.com/docs/postman/environments_and_globals/variables) in Postman
+    2.  put the following code in the Postman `Pre-request Script` tab 
+    
+    ```
+       uuid4 = function() {
+           return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, _uuid4);
+         };
+         //// OPTIMIZATION - cache callback
+         _uuid4 = function(cc) {
+           var rr = Math.random() * 16 | 0; return (cc === 'x' ? rr : (rr & 0x3 | 0x8)).toString(16);
+         };
+         var uuid = uuid4()
+         console.log(uuid)
+       postman.setEnvironmentVariable('ctime',(new Date()).toISOString());
+       postman.setEnvironmentVariable('uuid',uuid);
+    ```
+       
+    3. Postman `Body` tab refer the 2 variables as `{{uuid}}` and `{{ctime}}` in caliper JSON refer it  `"id": "{{uuid}}" "sendTime": "{{ctime}}" "eventTime": "{{ctime}}"`,
+
+
             
 

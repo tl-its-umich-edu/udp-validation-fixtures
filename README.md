@@ -35,7 +35,9 @@ if(gold-tier LC):
                                        "urn:uuid:220ec031-4500-4f73-96e4-c1bc4df30d83": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "36763424717427"}, 
                                        "urn:uuid:94e3b5e0-98c8-4057-855b-91f9a26697c8": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "36762709009312"}, 
                                        "urn:uuid:386c77b6-17cf-49b0-a6cf-61269261ac4f": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "36761196357185"}}}
-           
+9. Fixtures `event_in_big_query_timed_1.json` , `event_in_big_query_timed_1.json`, Test case: E-25, I see the events in Big query but around 20/29/32 sec.
+    1. {"urn:uuid:c75e7657-5a98-48d0-ab55-b0ae79aa3c05": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "37308065254025"}}
+    2. {"urn:uuid:52e61d74-bd42-46d3-9610-487ab04c8102": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "37314317365443"}}
            
 
             

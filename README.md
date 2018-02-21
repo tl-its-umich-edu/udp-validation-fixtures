@@ -38,6 +38,8 @@ if(gold-tier LC):
 9. Fixtures `event_in_big_query_timed_1.json` , `event_in_big_query_timed_1.json`, Test case: E-25, I see the events in Big query but around 20/29/32 sec.
     1. {"urn:uuid:c75e7657-5a98-48d0-ab55-b0ae79aa3c05": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "37308065254025"}}
     2. {"urn:uuid:52e61d74-bd42-46d3-9610-487ab04c8102": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "37314317365443"}}
+10. Fixture `quarantine_flow.json` Test case: E-21 Ended up in the quarantine bucket(Buckets/stream-unizin-udp-quarantine-umich-dev/STREAM-unizin-umich-umich-stream-GoldLectureCapture-dev)
+      {HTTP code: Response} => {200: {"urn:uuid:d997cdea-57ee-4673-a392-191f16128e82": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "40055452352074"}}}
            
 
 

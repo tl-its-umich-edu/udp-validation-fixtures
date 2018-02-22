@@ -1,0 +1,69 @@
+{
+  "@context": "http://purl.imsglobal.org/ctx/caliper/v1p0",
+  "id": "urn:uuid:c75e7657-5a98-48d0-ab55-b0ae79aa3c05",
+  "type": "MediaEvent",
+  "actor": "https://mcommunity.umich.edu/#profile:ststvii",
+  "action": "Ended",
+  "object": {
+    "id": "https://leccap.engin.umich.edu/leccap/viewer/r/KlBVNt",
+    "type": "VideoObject",
+    "name": "Homeostasis",
+    "dateCreated": "2017-09-27T14:08:00.000Z",
+    "dateModified": "2017-10-02T14:48:30.000Z",
+    "duration": "PT5899.000S",
+    "isPartOf": {
+      "id": "https://leccap.engin.umich.edu/leccap/site/6cbf6ghw4021r2k0dgz",
+      "type": "WebPage",
+      "name": "COURSE 101 003 FA 2015",
+      "dateCreated": "2017-09-01T21:47:18.000Z"
+    }
+  },
+  "target": {
+    "id": "https://leccap.engin.umich.edu/leccap/viewer/r/KlBVNt#type=MediaLocation",
+    "type": "MediaLocation",
+    "currentTime": "PT4583.012S",
+    "isPartOf": "https://leccap.engin.umich.edu/leccap/viewer/r/KlBVNt"
+  },
+  "eventTime": "2018-02-16T14:20:46.253Z",
+  "edApp": "https://leccap-beta.engin.umich.edu/#applicationName=Lecture+Capture",
+  "session": {
+    "id": "urn:umich:engin:leccap:session:b35E4779dfD02492F8B",
+    "type": "Session",
+    "user": "https://mcommunity.umich.edu/#profile:ststvii",
+    "startedAtTime": "2017-10-02T13:45:13.000Z"
+  },
+  "group": {
+    "id": "https://leccap.engin.umich.edu/leccap/site/6cbf6ghw4021r2k0dgz#CourseOffering",
+    "type": "CourseOffering",
+    "courseNumber": "COURSE 101 003 FA 2015",
+    "academicSession": "FA 2017"
+  },
+  "membership": {
+    "id": "https://leccap.engin.umich.edu/leccap/site/6cbf6ghw4021r2k0dgz#Membership&member=ststvii",
+    "type": "Membership",
+    "member": "https://mcommunity.umich.edu/#profile:ststvii",
+    "organization": "https://leccap.engin.umich.edu/leccap/site/6cbf6ghw4021r2k0dgz#CourseOffering",
+    "roles": [
+      "Learner"
+    ],
+    "status": "Active"
+  },
+  "federatedSession": {
+    "id": "urn:instructure:canvas:umich:session:bDfEedD750BbAB50d6fCB2AFd974FFb37f7eF9",
+    "type": "LtiSession",
+    "user": "https://mcommunity.umich.edu/#profile:ststvii",
+    "messageParameters": {
+      "custom_canvas_course_id": 65745,
+      "custom_canvas_user_id": 115260,
+      "lis_course_offering_sourcedid": "test_term_00199999003",
+      "lis_person_sourcedid": 34270233,
+      "resource_link_id": "9a17100e4c806512a4a34b20d61dd8786d2c9826"
+    }
+  },
+  "extensions": {
+    "com.unizin.canvas": {
+      "ucdm_course_offering_id": "522997",
+      "ucdm_actor_id": "2"
+    }
+  }
+}

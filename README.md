@@ -40,6 +40,8 @@ if(gold-tier LC):
     2. {"urn:uuid:52e61d74-bd42-46d3-9610-487ab04c8102": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "37314317365443"}}
 10. Fixture `quarantine_flow.json` Test case: E-21 Ended up in the quarantine bucket(Buckets/stream-unizin-udp-quarantine-umich-dev/STREAM-unizin-umich-umich-stream-GoldLectureCapture-dev)
       {HTTP code: Response} => {200: {"urn:uuid:d997cdea-57ee-4673-a392-191f16128e82": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "40055452352074"}}}
+11. Fixture `event_in_big_query_timed_1.json`, Test case: E-20 Events are in BigQuery with enriched. Verifed that data that is enriched have correct CloudSQL record number. More on how to 
+    verify enriched events is described below
            
 
 
@@ -64,6 +66,48 @@ if(gold-tier LC):
        
     3. Postman `Body` tab refer the 2 variables as `{{uuid}}` and `{{ctime}}` in caliper JSON refer it  `"id": "{{uuid}}" "sendTime": "{{ctime}}" "eventTime": "{{ctime}}"`,
 
+### steps for checking enriched event has map to CloudSQL 
+1. login to CloudSQL from a terminal using `psql -h 130.211.135.130  -U umich_readonly -p 5432 unizin`, when prompted use password stored in the Box
+    1. Basic command 
+        1. `\l` = shows list of Databases on the server
+        2. `\dt` = show list of table in the `unizin` DB there are total of `195` tables
+2. get the enriched ucdm course/user id and sis_id from the BigQuery tables `ucdm_course_offering_id`	`ucdm_actor_id`	`course_offering_id`	`event_actor_id`. Below is how where you can look for them in the caliper event
+    ```
+    "federatedSession": {
+        "id": "urn:instructure:canvas:umich:session:bDfEedD750BbAB50d6fCB2AFd974FFb37f7eF9",
+        "type": "LtiSession",
+        "user": "https://mcommunity.umich.edu/#profile:ststvii",
+        "messageParameters": {
+          "custom_canvas_course_id": 65745,
+          "custom_canvas_user_id": 115260,
+          "lis_course_offering_sourcedid": "test_term_00199999003",
+          "lis_person_sourcedid": 34270233,
+          "resource_link_id": "9a17100e4c806512a4a34b20d61dd8786d2c9826"
+        }
+      }
+      
+    "extensions": {
+        "com.unizin.canvas": {
+          "ucdm_course_offering_id": "522997",
+          "ucdm_actor_id": "2"
+        }
+      }
+     ``` 
+ 3. `UdpEntityKeyMapping` table defines the key mapping between `SourceKey` and `UcdmKey`
+    So for an SIS id of `abcd`, you can search `where SourceKey = 'abcd'` and find which `UcdmKey` that corresponds to
+    If it is a `Person` record, that corresponds to their `Person.PersonId` value
+    If it’s a `Course offering` record, that corresponds to their `Course.OrganizationId` value
+    ```
+    unizin=> select * from udpentitykeymapping where sourcekey = '34270233';
+      id    | systemprovisioningid | ucdmentityid | sourcekey | ucdmkey
+    ---------+----------------------+--------------+-----------+---------
+    1047035 |                    3 |            1 | 34270233  |       2
+    
+    unizin=> select * from udpentitykeymapping where sourcekey = 'test_term_00199999003';
+       id    | systemprovisioningid | ucdmentityid |       sourcekey       | ucdmkey
+    ---------+----------------------+--------------+-----------------------+---------
+     1047034 |                    3 |            4 | test_term_00199999003 |  522997
+    ```
 
             
 

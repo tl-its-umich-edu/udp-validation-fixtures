@@ -25,7 +25,7 @@ if(gold-tier LC):
     1. This case is sending a caliper event with envelope with out a payload, with missing OAuth token header, pass the test return {HTTP code: Response} => {400 : bearer token missing or not recognized}
 5. **E-17**, Fixture `E-17_gte_routed_to_pub_sub_topic.json` , 
     1. Event sent successfully with proper routing information. {HTTP code: Response} => {200 : {"urn:uuid:c982635a-cae4-420e-a6f5-7cd1c0d8de39": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "340963522}
-6. **E-16**, Fixture `E-16_gte_routed_to_pub_sub_topic.json` ,  this test case is same as E-17 the only difference is the E-16 checks for the presence of a response. E-17 and E-18 confirm that the response is correct
+6. **E-16**, Fixture `E-16_gte_routed_to_pub_sub_topic.json` ,  this test case is same as E-17 the only difference is the E-16 checks for the presence of a response. 
 7. **E-19**, Fixture `E-17_gte_routed_to_pub_sub_topic.json` , 
        1. Event sent successfully with proper routing information and found in the raw bucket. {HTTP code: Response} => {200 : {"urn:uuid:c982635a-cae4-420e-a6f5-7cd1c0d8de39": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "340963522}
            this use case events are not written to BigQuery. But this call set the stage for next step for event processing. 
@@ -42,6 +42,10 @@ if(gold-tier LC):
       {HTTP code: Response} => {200: {"urn:uuid:d997cdea-57ee-4673-a392-191f16128e82": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "40055452352074"}}}
 11. **E-20**, Fixture `E-20_event_in_big_query_timed_1.json`, Events are in BigQuery with enriched. Verifed that data that is enriched have correct CloudSQL record number. More on how to 
     verify enriched events is described below
+12. **E-24**, Fixture `E-24_gte_routed_to_pub_sub_topic.json` Event UUID correctly retrived from BQ
+      1. `select * from learning_datasets.enriched_events where id = 'd997cdea-57ee-4673-a392-191f16128e82' `
+13. **E-03** Fixture `E-03_gte_routed_to_pub_sub_topic.json` This is caliper compliance test and endpoint responded with correct info. 
+       1. {HTTP code: Response} => {200 : {"urn:uuid:c982635a-cae4-420e-a6f5-7cd1c0d8de39": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "340963522}
            
 
 

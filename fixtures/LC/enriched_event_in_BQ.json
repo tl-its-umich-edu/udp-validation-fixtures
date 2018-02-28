@@ -53,10 +53,10 @@
     "type": "LtiSession",
     "user": "https://mcommunity.umich.edu/#profile:ststvii",
     "messageParameters": {
-      "custom_canvas_course_id": 65745,
-      "custom_canvas_user_id": 115260,
+      "custom_canvas_course_id": "65745",
+      "custom_canvas_user_id": "115260",
       "lis_course_offering_sourcedid": "test_term_00199999003",
-      "lis_person_sourcedid": 34270233,
+      "lis_person_sourcedid": "34270233",
       "resource_link_id": "9a17100e4c806512a4a34b20d61dd8786d2c9826"
     }
   },

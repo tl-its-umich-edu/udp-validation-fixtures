@@ -58,9 +58,9 @@
         "type": "LtiSession",
         "user": "https://mcommunity.umich.edu/#profile:user004",
         "messageParameters": {
-          "custom_canvas_course_id": 182678,
+          "custom_canvas_course_id": "182678",
           "custom_canvas_user_id": "user004_cid",
-          "lis_course_offering_sourcedid": 216004646201001,
+          "lis_course_offering_sourcedid": "216004646201001",
           "lis_person_sourcedid": "user004_sisid",
           "resource_link_id": "9a17100e4c806512a4a34b20d61dd8786d2c9826"
         }

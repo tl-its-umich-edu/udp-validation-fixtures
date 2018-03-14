@@ -46,6 +46,8 @@ if(gold-tier LC):
       1. `select * from learning_datasets.enriched_events where id = 'd997cdea-57ee-4673-a392-191f16128e82' `
 13. **E-03** Fixture `E-03_gte_routed_to_pub_sub_topic.json` This is caliper compliance test and endpoint responded with correct info. 
        1. {HTTP code: Response} => {200 : {"urn:uuid:c982635a-cae4-420e-a6f5-7cd1c0d8de39": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "340963522}
+14. **E-18** Fixture `E-18_silver_tier_with_unknown_edapp.json`
+       1. {HTTP code: Response} => {200 :{"urn:uuid:d25f86dd-b742-447f-961c-c27a7983c6a9": {"STREAM-unizin-umich-umich-stream-Silver-dev": "55133711350184"}}}
            
 
 

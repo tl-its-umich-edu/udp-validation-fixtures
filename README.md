@@ -48,6 +48,10 @@ if(gold-tier LC):
        1. {HTTP code: Response} => {200 : {"urn:uuid:c982635a-cae4-420e-a6f5-7cd1c0d8de39": {"STREAM-unizin-umich-umich-stream-GoldUMichLectureCapture-dev": "340963522}
 14. **E-18** Fixture `E-18_silver_tier_with_unknown_edapp.json`
        1. {HTTP code: Response} => {200 :{"urn:uuid:d25f86dd-b742-447f-961c-c27a7983c6a9": {"STREAM-unizin-umich-umich-stream-Silver-dev": "55133711350184"}}}
+15. **E-22** Fixture `E-22_st_event_in_big_query.json` Event found in BQ when queried. the file `event_in_big_query.json` is the how the event in BQ tables
+             `ed_app`, `ucdm_course_id`, and `ucdm_actor_id` columns are null
+       1. {HTTP code: Response} => {200 :{"urn:uuid:81a334cd-9dff-45ab-9d53-cefbad6ce7ed": {"STREAM-unizin-umich-umich-stream-Silver-dev": "55540394456272"}}}
+       2. `select * from learning_datasets.enriched_events where id = '81a334cd-9dff-45ab-9d53-cefbad6ce7ed'` 
            
 
 

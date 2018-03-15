@@ -1,0 +1,52 @@
+{
+  "sensor": "udp_testing_sensor",
+  "sendTime": "2018-03-15T12:03:06.290Z",
+  "dataVersion": "http://purl.imsglobal.org/ctx/caliper/v1p1",
+  "data": [
+    {
+      "@context": "http://purl.imsglobal.org/ctx/caliper/v1p1",
+      "action": "NavigatedTo",
+      "actor": {
+        "id": "https://example.edu/users/554433",
+        "type": "Person"
+      },
+      "edApp": "https://UDP_testing_app.edu",
+      "eventTime": "2018-03-15T12:03:06.290Z",
+      "group": {
+        "academicSession": "Fall 2016",
+        "courseNumber": "CPS 435-01",
+        "id": "https://example.edu/terms/201601/courses/7/sections/1",
+        "type": "CourseSection"
+      },
+      "id": "urn:uuid:81a334cd-9dff-45ab-9d53-cefbad6ce7ed",
+      "membership": {
+        "dateCreated": "2016-08-01T06:00:00.000Z",
+        "id": "https://example.edu/terms/201601/courses/7/sections/1/rosters/1",
+        "member": "https://example.edu/users/554433",
+        "organization": "https://example.edu/terms/201601/courses/7/sections/1",
+        "roles": [
+          "Learner"
+        ],
+        "status": "Active",
+        "type": "Membership"
+      },
+      "object": {
+        "dateCreated": "2016-08-01T09:00:00.000Z",
+        "description": "Overview of Learning Analytics Specifications with particular emphasis on IMS Caliper.",
+        "id": "https://example.edu/terms/201601/courses/7/sections/1/pages/2",
+        "name": "Learning Analytics Specifications",
+        "type": "WebPage"
+      },
+      "referrer": {
+        "id": "https://example.edu/terms/201601/courses/7/sections/1/pages/1",
+        "type": "WebPage"
+      },
+      "session": {
+        "id": "https://example.edu/sessions/1f6442a482de72ea6ad134943812bff564a76259",
+        "startedAtTime": "2016-11-15T10:00:00.000Z",
+        "type": "Session"
+      },
+      "type": "NavigationEvent"
+    }
+  ]
+}

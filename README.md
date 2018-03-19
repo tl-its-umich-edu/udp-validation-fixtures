@@ -1,7 +1,8 @@
 # udp-validation-fixtures
 
-### Lecture Capture Gold Tire testing:
+### Lecture Capture testing:
 This repo hold the JSON fixtures used in testing UDP, the test cases are described in the [Sheets](https://docs.google.com/spreadsheets/d/1XGj76VRC1t2NH3LeA60U2rHqogqx_CIy1KAL48Cv5NQ/edit#gid=0). Here is the work flow 
+LC gold and silver tier events will end up in same dataset in BigQuery. In general UDP promises to have events that belong to a particular edApp will end up as seperate Dataset in BQ. 
 ```
 if(gold-tier LC):
    store in raw;
@@ -10,6 +11,15 @@ if(gold-tier LC):
       write to BQ;
    else
       write to quarantine;
+             
+if(amount_of_time_events_sitting_in_quarantine > X amount_of_time)
+    write to BQ
+   
+if(silver-tier LC):
+    write to BQ;  
+    
+if(silver-tier any):
+    write to BQ:
 ```
 
 1. **E-09**, Fixture `E-09_event_with_out_envelope.json`,  Send a Caliper event that contains 
@@ -52,6 +62,10 @@ if(gold-tier LC):
              `ed_app`, `ucdm_course_id`, and `ucdm_actor_id` columns are null
        1. {HTTP code: Response} => {200 :{"urn:uuid:81a334cd-9dff-45ab-9d53-cefbad6ce7ed": {"STREAM-unizin-umich-umich-stream-Silver-dev": "55540394456272"}}}
        2. `select * from learning_datasets.enriched_events where id = '81a334cd-9dff-45ab-9d53-cefbad6ce7ed'` 
+16. **E-28** Fixture `E-28_st_no_LMS_and_auth_user_data.json` Event is routed as Silver tier and appeared in BQ with out enrichment
+       1. {HTTP code: Response} => {200 :{ "urn:uuid:a3a02d35-6dac-42a2-b280-8e6c3663a5d4": { "STREAM-unizin-umich-umich-stream-Silver-dev": "58088901001273"}}}
+17. **E-27** Fixture `E-27_st_no_LMS_data_with_auth_user_data.json` Event is routed as Silver tier and appeared in BQ with out enrichment
+       1. {HTTP code: Response} => {200 :{ "urn:uuid:a48611e2-f4b8-4d83-a34b-8966db99d859": { "STREAM-unizin-umich-umich-stream-Silver-dev": "55726773782581"}}}
            
 
 

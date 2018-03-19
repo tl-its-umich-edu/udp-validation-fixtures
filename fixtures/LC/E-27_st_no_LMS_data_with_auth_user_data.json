@@ -1,0 +1,42 @@
+{
+  "sensor": "leccap_caliper_postman",
+  "sendTime": "2018-03-15T18:03:26.057Z",
+  "dataVersion": "http://purl.imsglobal.org/ctx/caliper/v1p1",
+  "data": [
+    {
+      "@context": "http://purl.imsglobal.org/ctx/caliper/v1p1",
+      "id": "urn:uuid:a48611e2-f4b8-4d83-a34b-8966db99d859",
+      "type": "SessionEvent",
+      "actor": "https://mcommunity.umich.edu/#profile:ststvii",
+      "action": "LoggedIn",
+      "object": "https://leccap-beta.engin.umich.edu/#applicationName=Lecture+Capture",
+      "eventTime": "2018-03-15T18:03:26.057Z",
+      "edApp": "https://leccap-beta.engin.umich.edu/#applicationName=Lecture+Capture",
+      "group": {
+        "academicSession": "w18",
+        "courseNumber": "MFG 599",
+        "dateCreated": "2013-08-06T17:33:14.000Z",
+        "id": "https://leccap-beta.engin.umich.edu/leccap/site/i8nnmrgfvqkmcyq8wps#type=CourseOffering",
+        "name": "Engineering test course",
+        "type": "CourseOffering"
+      },
+      "membership": {
+        "id": "https://leccap-beta.engin.umich.edu/leccap/site/i8nnmrgfvqkmcyq8wps#type=Membership&member=ststvii",
+        "member": "https://mcommunity.umich.edu/#profile:ststvii",
+        "organization": "https://leccap-beta.engin.umich.edu/leccap/site/i8nnmrgfvqkmcyq8wps#type=CourseOffering",
+        "roles": [
+          "Learner"
+        ],
+        "status": "Active",
+        "type": "Membership"
+      },
+      "session": {
+        "id": "urn:session-id-localized:leccap-beta.engin.umich.edu/44l9rs836ckb6ql21ldvhrmku1",
+        "startedAtTime": "2018-03-15T18:03:26.057Z",
+        "type": "Session",
+        "user": "https://mcommunity.umich.edu/#profile:ststvii"
+      }
+
+    }
+  ]
+}

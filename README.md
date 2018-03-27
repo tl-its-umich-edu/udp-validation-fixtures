@@ -1,8 +1,29 @@
 # udp-validation-fixtures
 
 ### Lecture Capture testing:
-This repo hold the JSON fixtures used in testing UDP, the test cases are described in the [Sheets](https://docs.google.com/spreadsheets/d/1XGj76VRC1t2NH3LeA60U2rHqogqx_CIy1KAL48Cv5NQ/edit#gid=0). Here is the work flow 
-LC gold and silver tier events will end up in same dataset in BigQuery. In general UDP promises to have events that belong to a particular edApp will end up as seperate Dataset in BQ. 
+This repo hold the JSON fixtures used in testing UDP, the test cases are described in the 
+[Sheets](https://docs.google.com/spreadsheets/d/1XGj76VRC1t2NH3LeA60U2rHqogqx_CIy1KAL48Cv5NQ/edit#gid=0). Here is the work flow 
+LC gold and silver tier events will end up in same dataset in BigQuery. In general UDP promises to have events that 
+belong to a particular edApp will end up as separate Dataset in BQ. 
+
+UDP has three foundational stores:
+1. Raw store
+2. Object store (relational data)
+3. Event store (event data)
+2 and 3 are enhanced/transformed versions of 1.
+
+Raw store is the true data lake – it is intended to permanently keep data if an error discovered in the ingestion 
+processes and need to "re-ingest" all data again after a fix is applied. The BQ store is also intended to keep all 
+data – but it is useful to keep "all original data" in a separate store. And that's what "raw" is.
+the Quarantine process eventually pushes the data to BQ store is not really a data lake, since data in it can be enhanced.
+
+#### Quarantine flow:
+When an event is sent to endpoint which has course/user data that is still not in the SIS batch data the event will be 
+written to quarantine bucket for enrichment later. 
+
+Before they're written to BQ or the quarantine, the Spark cluster processing the events writes them to disk. 
+Google's fully managed Spark service will be adopted going forward
+
 ```
 if(gold-tier LC):
    store in raw;
@@ -16,9 +37,11 @@ if(amount_of_time_events_sitting_in_quarantine > X amount_of_time)
     write to BQ
    
 if(silver-tier LC):
+    store in raw;
     write to BQ;  
     
 if(silver-tier any):
+    store in raw;
     write to BQ:
 ```
 
